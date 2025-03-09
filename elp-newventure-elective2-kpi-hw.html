@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KyoConnectAI - KPI and Pivot/Persevere decision making</title>
+    <title>KyoConnectAI - KPI and Pivot/Persevere Decision Making</title>
     <style>
         body { font-family: Arial, sans-serif; margin: 40px; color: #333; }
         header { text-align: center; padding: 20px; background: #000; color: #fff; }
@@ -13,14 +13,73 @@
         table { width: 100%; border-collapse: collapse; margin-top: 10px; }
         th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
         th { background-color: #f4f4f4; }
+
+        /* BMC Styles */
+        .bmc-container { display: none; margin-top: 30px; padding: 20px; border: 1px solid #ddd; border-radius: 5px; }
+        .bmc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; text-align: center; }
+        .bmc-item { padding: 15px; border: 1px solid #ddd; background: #f9f9f9; border-radius: 5px; cursor: pointer; }
+        .bmc-highlight { background: #4CAF50; color: #fff; font-weight: bold; }
+        .bmc-content { display: none; padding: 10px; background: #e6e6e6; margin-top: 5px; border-radius: 5px; }
+
+        /* Toggle Switch */
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 25px;
+        }
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 25px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 17px;
+            width: 17px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: black;
+        }
+        input:checked + .slider:before {
+            transform: translateX(25px);
+        }
     </style>
+    <script>
+        function toggleBMC() {
+            var bmcDiv = document.getElementById("bmc");
+            bmcDiv.style.display = (bmcDiv.style.display === "none" || bmcDiv.style.display === "") ? "block" : "none";
+        }
+
+        function toggleBMCItem(id) {
+            var content = document.getElementById(id);
+            content.style.display = (content.style.display === "none" || content.style.display === "") ? "block" : "none";
+        }
+    </script>
 </head>
 <body>
     <header>
         <h1>KyoConnectAI - KPI Homework</h1>
         <p>ELP New Ventures Elective 2: Building the Business Opportunity</p>
     </header>
-    
+
     <div class="section">
         <h2>📌 Current Stage of Development</h2>
         <ul>
@@ -30,117 +89,152 @@
             <li>✅ Exploring business school market (validated by EMLyon, reaching IMD)</li>
         </ul>
     </div>
-    
+
     <div class="section">
-        <h2>📊 Customer KPIs</h2>
-        <p><strong>Objective:</strong> Validate product-market fit, adoption in camping sites, and feature expansion.</p>
-        <table>
-            <tr>
-                <th>Metric</th>
-                <th>Description</th>
-                <th>Reason for Selection</th>
-            </tr>
-            <tr>
-                <td>Early Adopter Retention Rate</td>
-                <td>% of customers continuing use after 3-6 months</td>
-                <td>Indicates long-term adoption & customization needs</td>
-            </tr>
-            <tr>
-                <td>Conversion Rate of Leads to Clients</td>
-                <td>% of contacted camping sites converting to customers</td>
-                <td>Key validation metric (30% adoption needed to persevere)</td>
-            </tr>
-            <tr>
-                <td>Feature Request Frequency</td>
-                <td>% of customers requesting additional features</td>
-                <td>Signals engagement & demand for customization</td>
-            </tr>
-            <tr>
-                <td>Customer Satisfaction Score (CSAT)</td>
-                <td>Survey-based satisfaction measure</td>
-                <td>Ensures service effectiveness & improved experience</td>
-            </tr>
-        </table>
-        <p><strong>🔹 Pivot if:</strong> Less than 30% adoption from targeted camping sites.</p>
-        <p><strong>🔹 Persevere if:</strong> Customers request further features, indicating deeper needs.</p>
+           <h2>📊 Customer KPIs</h2>
+           <p><strong>Objective:</strong> Validate product-market fit, adoption in camping sites, and feature expansion.</p>
+           <table>
+               <tr>
+                   <th>Metric</th>
+                   <th>Description</th>
+                   <th>Reason for Selection</th>
+               </tr>
+               <tr>
+                   <td>Early Adopter Retention Rate</td>
+                   <td>% of customers continuing use after 3-6 months</td>
+                   <td>Indicates long-term adoption & customization needs</td>
+               </tr>
+               <tr>
+                   <td>Conversion Rate of Leads to Clients</td>
+                   <td>% of contacted camping sites converting to customers</td>
+                   <td>Key validation metric (30% adoption needed to persevere)</td>
+               </tr>
+               <tr>
+                   <td>Feature Request Frequency</td>
+                   <td>% of customers requesting additional features</td>
+                   <td>Signals engagement & demand for customization</td>
+               </tr>
+               <tr>
+                   <td>Customer Satisfaction Score (CSAT)</td>
+                   <td>Survey-based satisfaction measure</td>
+                   <td>Ensures service effectiveness & improved experience</td>
+               </tr>
+           </table>
+           <p><strong>🔹 Pivot if:</strong> Less than 30% adoption from targeted camping sites.</p>
+           <p><strong>🔹 Persevere if:</strong> Customers request further features, indicating deeper needs.</p>
+       </div>
+
+       <div class="section">
+           <h2>🛠 Technical KPIs</h2>
+           <p><strong>Objective:</strong> Ensure chatbot reliability, efficiency, and scalability.</p>
+           <table>
+               <tr>
+                   <th>Metric</th>
+                   <th>Description</th>
+                   <th>Reason for Selection</th>
+               </tr>
+               <tr>
+                   <td>Chatbot Accuracy Rate</td>
+                   <td>% of correct responses</td>
+                   <td>Ensures reliable answer generation</td>
+               </tr>
+               <tr>
+                   <td>System Uptime (%)</td>
+                   <td>% of time chatbot is fully operational</td>
+                   <td>Ensures service reliability</td>
+               </tr>
+               <tr>
+                   <td>Error Rate (%)</td>
+                   <td>% of incorrect responses</td>
+                   <td>Measures AI response quality</td>
+               </tr>
+               <tr>
+                   <td>Response Latency</td>
+                   <td>Average chatbot response time</td>
+                   <td>Measures speed & efficiency</td>
+               </tr>
+               <tr>
+                   <td>Feature Expansion Adoption Rate</td>
+                   <td>% of users implementing advanced features</td>
+                   <td>Tracks demand for future customization</td>
+               </tr>
+           </table>
+           <p><strong>🔹 Pivot if:</strong> Accuracy < 80% or low feature demand.</p>
+           <p><strong>🔹 Persevere if:</strong> Feature expansion grows, justifying AI improvements.</p>
+       </div>
+
+       <div class="section">
+           <h2>📈 Enterprise KPIs</h2>
+           <p><strong>Objective:</strong> Ensure financial viability & sustainable growth.</p>
+           <table>
+               <tr>
+                   <th>Metric</th>
+                   <th>Description</th>
+                   <th>Reason for Selection</th>
+               </tr>
+               <tr>
+                   <td>Customer Acquisition Cost (CAC)</td>
+                   <td>Cost to acquire one customer</td>
+                   <td>Ensures CAC is sustainable</td>
+               </tr>
+               <tr>
+                   <td>Burn Rate</td>
+                   <td>Monthly expenses vs. revenue</td>
+                   <td>Determines financial health</td>
+               </tr>
+               <tr>
+                   <td>Annual Customer Value (ACV)</td>
+                   <td>Revenue per client per year</td>
+                   <td>Tracks financial contribution of each customer</td>
+               </tr>
+               <tr>
+                   <td>Revenue Growth Rate</td>
+                   <td>Monthly revenue increase</td>
+                   <td>Measures business expansion</td>
+               </tr>
+               <tr>
+                   <td>Churn Rate (%)</td>
+                   <td>% of customers canceling subscription</td>
+                   <td>Indicates retention & pricing model success</td>
+               </tr>
+           </table>
+           <p><strong>🔹 Pivot if:</strong> CAC exceeds ACV consistently.</p>
+           <p><strong>🔹 Persevere if:</strong> Revenue growth sustains, ensuring financial stability.</p>
+       </div>
+
+       
+    <div class="section">
+        <h2>BMC</h2> <label class="toggle-switch">
+            <input type="checkbox" onclick="toggleBMC()">
+            <span class="slider"></span>
+        </label>
     </div>
-    
-    <div class="section">
-        <h2>🛠 Technical KPIs</h2>
-        <p><strong>Objective:</strong> Ensure chatbot reliability, efficiency, and scalability.</p>
-        <table>
-            <tr>
-                <th>Metric</th>
-                <th>Description</th>
-                <th>Reason for Selection</th>
-            </tr>
-            <tr>
-                <td>Chatbot Accuracy Rate</td>
-                <td>% of correct responses</td>
-                <td>Ensures reliable answer generation</td>
-            </tr>
-            <tr>
-                <td>System Uptime (%)</td>
-                <td>% of time chatbot is fully operational</td>
-                <td>Ensures service reliability</td>
-            </tr>
-            <tr>
-                <td>Error Rate (%)</td>
-                <td>% of incorrect responses</td>
-                <td>Measures AI response quality</td>
-            </tr>
-            <tr>
-                <td>Response Latency</td>
-                <td>Average chatbot response time</td>
-                <td>Measures speed & efficiency</td>
-            </tr>
-            <tr>
-                <td>Feature Expansion Adoption Rate</td>
-                <td>% of users implementing advanced features</td>
-                <td>Tracks demand for future customization</td>
-            </tr>
-        </table>
-        <p><strong>🔹 Pivot if:</strong> Accuracy < 80% or low feature demand.</p>
-        <p><strong>🔹 Persevere if:</strong> Feature expansion grows, justifying AI improvements.</p>
-    </div>
-    
-    <div class="section">
-        <h2>📈 Enterprise KPIs</h2>
-        <p><strong>Objective:</strong> Ensure financial viability & sustainable growth.</p>
-        <table>
-            <tr>
-                <th>Metric</th>
-                <th>Description</th>
-                <th>Reason for Selection</th>
-            </tr>
-            <tr>
-                <td>Customer Acquisition Cost (CAC)</td>
-                <td>Cost to acquire one customer</td>
-                <td>Ensures CAC is sustainable</td>
-            </tr>
-            <tr>
-                <td>Burn Rate</td>
-                <td>Monthly expenses vs. revenue</td>
-                <td>Determines financial health</td>
-            </tr>
-            <tr>
-                <td>Annual Customer Value (ACV)</td>
-                <td>Revenue per client per year</td>
-                <td>Tracks financial contribution of each customer</td>
-            </tr>
-            <tr>
-                <td>Revenue Growth Rate</td>
-                <td>Monthly revenue increase</td>
-                <td>Measures business expansion</td>
-            </tr>
-            <tr>
-                <td>Churn Rate (%)</td>
-                <td>% of customers canceling subscription</td>
-                <td>Indicates retention & pricing model success</td>
-            </tr>
-        </table>
-        <p><strong>🔹 Pivot if:</strong> CAC exceeds ACV consistently.</p>
-        <p><strong>🔹 Persevere if:</strong> Revenue growth sustains, ensuring financial stability.</p>
+
+    <div id="bmc" class="bmc-container">
+        <h2>📌 Business Model Canvas</h2>
+        <div class="bmc-grid">
+            <div class="bmc-item" onclick="toggleBMCItem('key-partners')">Key Partners</div>
+            <div class="bmc-item" onclick="toggleBMCItem('key-activities')">Key Activities</div>
+            <div class="bmc-item bmc-highlight" onclick="toggleBMCItem('value-proposition')">Value Proposition</div>
+            <div class="bmc-item" onclick="toggleBMCItem('customer-relationships')">Customer Relationships</div>
+            <div class="bmc-item" onclick="toggleBMCItem('customer-segments')">Customer Segments</div>
+            <div class="bmc-item" onclick="toggleBMCItem('cost-structure')">Cost Structure</div>
+            <div class="bmc-item" onclick="toggleBMCItem('revenue-streams')">Revenue Streams</div>
+        </div>
+
+        <!-- BMC Details -->
+        <div id="key-partners" class="bmc-content">👥 AI providers (OpenAI, Mistral, DeepSeek), business incubators, industry-specific partners.</div>
+        <div id="key-activities" class="bmc-content">🔧 AI chatbot integration, customer onboarding, continuous AI training.</div>
+        <div id="value-proposition" class="bmc-content">
+            🚀 **Beyond Just a Chatbot:** KyoConnectAI isn't just an AI chatbot; it's an **AI-driven business enabler** for SMBs.
+            🌍 **Scalable & Adaptable:** Tailored AI solutions that adapt to business needs.
+            🤝 **Human-AI Synergy:** Enhances customer engagement while reducing repetitive workload.
+            🔄 **Continuous Improvement:** AI evolves with customer interactions for superior performance.
+        </div>
+        <div id="customer-relationships" class="bmc-content">💬 Personalized support, feedback loops, AI-assisted guidance.</div>
+        <div id="customer-segments" class="bmc-content">🏕 Camping sites, business schools, SMBs struggling with customer inquiries.</div>
+        <div id="cost-structure" class="bmc-content">💰 AI model licensing, infrastructure, customer acquisition.</div>
+        <div id="revenue-streams" class="bmc-content">📈 Subscription-based model, premium AI features, enterprise customization.</div>
     </div>
 </body>
 </html>
