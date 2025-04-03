@@ -1,0 +1,593 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bel Air Pornichet - Family campsite by the sea [Mock]</title>
+    <meta name="description" content="Le Bel Air Camping Pornichet **** is located near the Atlantic Ocean and La Baule and provides accomodation for all budgets.">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/Belair/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.belairpornichet.fr/images/favicons/Belair/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.belairpornichet.fr/images/favicons/Belair/favicon-16x16.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        /* Basic Reset & Defaults */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            /* Using font from source */
+            font-family: 'Nunito', sans-serif;
+            line-height: 1.6;
+            color: #333;
+             /* Mimic antialiased from source body class */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Using Orange theme color hints */
+        :root {
+           --theme-orange: #FBB13C; /* Color from infobar background */
+           --theme-orange-dark: #e69a2a;
+           --theme-blue: #0056b3; /* Default blue for links etc */
+           --theme-blue-dark: #004490;
+        }
+
+
+        a {
+            text-decoration: none;
+            color: var(--theme-blue);
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: var(--theme-blue-dark);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+         /* Info Bar from source */
+         .info-bar {
+            background-color: var(--theme-orange);
+            color: #fff;
+            text-align: center;
+            padding: 10px 15px;
+            font-size: 0.9em;
+         }
+         .info-bar p {
+             margin: 0;
+             line-height: 1.4;
+         }
+
+
+        /* Header */
+        header {
+            background-color: #ffffff;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0; /* Make sticky relative to info bar if shown */
+            z-index: 1000;
+        }
+         body.has-info-bar header {
+             top: 38px; /* Adjust based on info bar height approx */
+         }
+
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap; /* Allow wrap on small screens */
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: var(--theme-blue); /* Darker blue for logo */
+        }
+
+        nav {
+            margin: 10px 0; /* Add margin for wrapping */
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap; /* Allow nav items to wrap */
+            justify-content: center; /* Center when wrapped */
+        }
+
+        nav ul li {
+            margin: 5px 12px; /* Adjust spacing */
+            position: relative; /* For dropdown indicators if added */
+        }
+
+        nav ul li a {
+            font-weight: 600; /* Nunito bold */
+            color: #333;
+            padding: 5px 0;
+            transition: color 0.3s ease;
+        }
+         nav ul li a:hover {
+             color: var(--theme-orange);
+             text-decoration: none;
+         }
+         /* Simple dropdown indicator */
+         nav ul li.has-submenu::after {
+             content: ' ▼'; /* Basic indicator */
+             font-size: 0.6em;
+             vertical-align: middle;
+             margin-left: 4px;
+             display: inline-block;
+         }
+
+
+        .booking-button {
+            /* Using theme orange */
+            background-color: var(--theme-orange);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            white-space: nowrap; /* Prevent button text wrapping */
+            margin-left: 15px; /* Space from nav */
+        }
+
+        .booking-button:hover {
+            background-color: var(--theme-orange-dark);
+            text-decoration: none;
+        }
+
+        /* Hero Section */
+        .hero {
+             /* Using og:image from source */
+            background: url('https://www.belairpornichet.fr/storage/pages/images/zPY6x9fe7VAWOJ6I1suf4sZ6mLuxMxdB8rFaIlhp.jpg') no-repeat center center/cover;
+            color: #fff;
+            height: 70vh; /* Adjust height as needed */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Enhance readability */
+        }
+
+        .hero h1 {
+            font-size: clamp(2em, 5vw, 3.5em); /* Responsive font size */
+            margin-bottom: 15px;
+            font-weight: 700; /* Bold Nunito */
+        }
+
+        .hero p {
+            font-size: clamp(1em, 3vw, 1.4em);
+            margin-bottom: 25px;
+            max-width: 700px;
+            font-weight: 400; /* Regular Nunito */
+        }
+
+        /* Sections General Styling */
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(1.8em, 4vw, 2.5em);
+            margin-bottom: 40px;
+            color: var(--theme-blue);
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 50px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Introduction / Highlights Section */
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Responsive grid */
+            gap: 30px;
+            text-align: center;
+        }
+
+        .highlight-item .icon {
+            font-size: 3em;
+            color: var(--theme-orange); /* Theme color for icons */
+            margin-bottom: 15px;
+        }
+         .highlight-item h3 {
+             margin-bottom: 10px;
+             font-size: 1.2em;
+             font-weight: 600;
+         }
+
+        /* Accommodations Section */
+        .accommodation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .accommodation-item {
+            border: 1px solid #eee;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: #fff;
+        }
+         .accommodation-item:hover {
+             transform: translateY(-5px);
+             box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+         }
+
+        .accommodation-item .img-placeholder {
+            display: block;
+            width: 100%;
+            height: 200px; /* Fixed height for images */
+            background-color: #ccc; /* Placeholder background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #777;
+            font-style: italic;
+        }
+
+         .accommodation-item .content {
+             padding: 20px;
+         }
+
+         .accommodation-item h3 {
+             margin-bottom: 10px;
+             color: var(--theme-blue);
+             font-weight: 600;
+         }
+         .accommodation-item p {
+             margin-bottom: 15px;
+             color: #555;
+             font-size: 0.95em;
+         }
+         .accommodation-item .btn {
+             display: inline-block;
+             background-color: var(--theme-orange); /* Theme color button */
+             color: #fff;
+             padding: 8px 15px;
+             border-radius: 20px; /* Pill shape */
+             font-size: 0.9em;
+             font-weight: 600;
+             transition: background-color 0.3s ease;
+         }
+          .accommodation-item .btn:hover {
+              background-color: var(--theme-orange-dark);
+              text-decoration: none;
+          }
+
+        /* Feature Section (e.g., Water Park) */
+        .feature-layout {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        .feature-layout .text-content {
+            flex: 1;
+            min-width: 300px;
+        }
+         .feature-layout .image-content {
+            flex: 1;
+             min-width: 300px;
+         }
+        .feature-layout .img-placeholder {
+             border-radius: 8px;
+             background-color: #ddd; /* Placeholder background */
+             height: 300px;
+             width: 100%;
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             color: #777;
+             font-style: italic;
+        }
+         .feature-layout h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: var(--theme-blue);
+            font-weight: 700;
+         }
+
+        /* Footer */
+        footer {
+            background-color: #383838; /* Darker grey */
+            color: #ccc; /* Lighter text */
+            padding: 50px 0 30px 0;
+            margin-top: 60px;
+            font-size: 0.9em;
+        }
+
+        footer .container {
+            display: grid; /* Use grid for better layout control */
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+         footer h4 {
+             color: #fff;
+             margin-bottom: 15px;
+             font-weight: 600;
+             border-bottom: 1px solid #555;
+             padding-bottom: 8px;
+             font-size: 1.1em;
+         }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer ul li {
+            margin-bottom: 10px;
+        }
+
+        footer ul li a {
+            color: #ccc;
+            transition: color 0.3s ease;
+        }
+        footer ul li a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        footer address {
+            font-style: normal;
+            line-height: 1.7;
+        }
+        footer .social-icons a {
+            color: #ccc;
+            font-size: 1.5em;
+            margin-right: 15px;
+            transition: color 0.3s ease;
+        }
+         footer .social-icons a:hover {
+             color: var(--theme-orange); /* Orange hover for social */
+         }
+
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #555;
+            font-size: 0.85em;
+            color: #aaa;
+        }
+
+        /* --- CHATBOT PLACEHOLDER --- */
+        #chatbot-placeholder {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: var(--theme-orange); /* Chatbot matches theme */
+            color: white;
+            padding: 15px;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.8em; /* Represents chat icon */
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            z-index: 1001;
+            transition: background-color 0.3s ease;
+        }
+         #chatbot-placeholder:hover {
+             background-color: var(--theme-orange-dark);
+         }
+
+    </style>
+</head>
+<body class="has-info-bar">
+
+    <div class="info-bar">
+      <p><span><span>The season is kicking off in Pornichet! ☀️ Easter holidays, May long weekends, relaxing getaways, or the big summer break? Book now and enjoy an unforgettable stay! 🥰</span></span></p>
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="logo">Camping Bel Air</div>
+            <nav>
+                <ul>
+                    <li class="has-submenu"><a href="#">The campsite</a></li>
+                    <li class="has-submenu"><a href="#">Accommodation</a></li>
+                    <li class="has-submenu"><a href="#">Beach Club</a></li>
+                    <li class="has-submenu"><a href="#">Services</a></li>
+                    <li><a href="#">Activities</a></li>
+                    <li><a href="#">Region</a></li>
+                    </ul>
+            </nav>
+            <a href="#" class="booking-button">Book your stay</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Your 5-Star Holiday by the Sea</h1>
+            <p>Direct beach access, heated water park & family fun near La Baule & Pornichet.</p>
+            <a href="#" class="booking-button">Explore Offers</a>
+        </section>
+
+        <section class="section highlights-section">
+            <div class="container">
+                 <h2 class="section-title">Welcome to Camping Bel Air</h2>
+                 <p class="section-subtitle">Enjoy an exceptional setting between La Baule and Pornichet for unforgettable seaside holidays.</p>
+                <div class="highlights">
+                    <div class="highlight-item">
+                        <div class="icon"><i class="fas fa-water"></i></div> <h3>Direct Beach Access</h3>
+                        <p>Step out of the campsite onto the fine sand.</p>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="icon"><i class="fas fa-swimmer"></i></div> <h3>Heated Water Park</h3>
+                        <p>Pools, slides, and water games for all ages.</p>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="icon"><i class="fas fa-concierge-bell"></i></div> <h3>5-Star Services</h3>
+                        <p>Restaurant, bar, grocery, wifi, bike rental...</p>
+                    </div>
+                     <div class="highlight-item">
+                        <div class="icon"><i class="fas fa-child"></i></div> <h3>Activities & Kids Clubs</h3>
+                        <p>Varied activities for all ages during the season.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background-color: #f8f9fa;"> <div class="container">
+                <h2 class="section-title">Our Accommodation</h2>
+                 <p class="section-subtitle">From comfortable mobile homes to traditional camping pitches, find your perfect spot.</p>
+                <div class="accommodation-grid">
+                    <div class="accommodation-item">
+                        <div class="img-placeholder">Premium Mobile Home Image</div>
+                        <div class="content">
+                            <h3>Premium Mobile Home</h3>
+                            <p>Modern and spacious, 2-3 bedrooms, covered terrace.</p>
+                            <a href="#" class="btn">Discover</a>
+                        </div>
+                    </div>
+                    <div class="accommodation-item">
+                        <div class="img-placeholder">Comfort Cottage Image</div>
+                        <div class="content">
+                            <h3>Comfort Cottage</h3>
+                            <p>Charm and functionality for nature holidays.</p>
+                             <a href="#" class="btn">Discover</a>
+                        </div>
+                    </div>
+                    <div class="accommodation-item">
+                       <div class="img-placeholder">Camping Pitch Image</div>
+                        <div class="content">
+                            <h3>Camping Pitch</h3>
+                            <p>For tents, caravans, and camper vans, shaded or sunny.</p>
+                             <a href="#" class="btn">Discover</a>
+                        </div>
+                    </div>
+                     <div class="accommodation-item">
+                       <div class="img-placeholder">Villa with Jacuzzi Image</div>
+                        <div class="content">
+                            <h3>Villa with Jacuzzi</h3>
+                            <p>Top comfort and privacy for a luxurious stay.</p>
+                             <a href="#" class="btn">Discover</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+             <div class="container">
+                 <h2 class="section-title">The Water Park</h2>
+                <div class="feature-layout">
+                     <div class="image-content">
+                        <div class="img-placeholder">Water Park View</div>
+                    </div>
+                    <div class="text-content">
+                        <h3>Water Fun for Everyone!</h3>
+                        <p>Our heated water park awaits you with its large pool, thrilling slides, fun paddling pool for toddlers, and a spa area for relaxation.</p>
+                        <p>Enjoy the sun loungers for a well-deserved sunbath. Supervision provided in high season.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <section class="section" style="background-color: #f8f9fa;">
+             <div class="container">
+                 <h2 class="section-title">Services & Activities</h2>
+                <div class="feature-layout">
+                     <div class="text-content">
+                        <h3>Make Your Holiday Easier</h3>
+                        <p>At Camping Bel Air, everything is designed for your comfort: restaurant with sea view, friendly bar, takeaway meals, convenience store, laundry, bike rental, Wifi access...</p>
+                         <p>In season, our entertainment team offers sports activities, themed evenings, shows, and clubs for children and teenagers.</p>
+                        <a href="#" class="btn">See Services</a>
+                    </div>
+                     <div class="image-content">
+                       <div class="img-placeholder">Restaurant & Activities Area</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-col">
+                 <h4>Camping Bel Air</h4>
+                <address>
+                    165 avenue de Bonne Source<br>
+                    44380 Pornichet<br>
+                    France<br>
+                    Phone: 02 40 61 10 78
+                </address>
+            </div>
+            <div class="footer-col">
+                <h4>Information</h4>
+                 <ul>
+                    <li><a href="#">General Renting Conditions</a></li>
+                    <li><a href="#">Regulations</a></li>
+                    <li><a href="#">Legal disclaimer</a></li>
+                </ul>
+            </div>
+             <div class="footer-col">
+                <h4>Quick Links</h4>
+                 <ul>
+                     <li><a href="#">Receive our Newsletter</a></li>
+                     <li><a href="#">News</a></li>
+                     <li><a href="#">Download our brochure</a></li>
+                </ul>
+            </div>
+             <div class="footer-col">
+                <h4>Follow Us</h4>
+                 <div class="social-icons">
+                    <a href="https://www.facebook.com/CampsiteBelAir?locale=fr_FR" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/belaircamping" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@CampingBelAir" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.tiktok.com/@campingbelair" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                 </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Mock Camping Bel Air Pornichet - All rights reserved
+        </div>
+    </footer>
+
+    <div id="chatbot-placeholder" title="Chat with our AI assistant">
+       <i class="fas fa-comment-dots"></i> </div>
+     </body>
+</html>
