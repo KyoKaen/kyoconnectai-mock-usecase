@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executive Summary – KyoConnectAI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f9fa;
+            color: #212529;
+            line-height: 1.6;
+            padding: 0; /* Remove body padding as container handles it */
+            margin: 0; /* Remove body margin */
+        }
+
+        .container {
+            max-width: 1000px; /* Set maximum width for the whole page content */
+            margin: 20px auto; /* Center the container with margin */
+            background-color: #fff;
+            padding: 20px; /* Padding inside the container */
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: flex; /* Flexbox for the main layout components */
+            flex-direction: column; /* Stack children vertically (header, then content-area) */
+        }
+
+        /* Header Section */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+            margin-bottom: 20px; /* Space below the header */
+            width: 100%; /* Header spans the width of the container */
+            box-sizing: border-box; /* Include padding/border in width */
+        }
+
+        .header-title h1 {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 0;
+            color: #000000;
+        }
+
+        .header-logo img {
+            max-height: 50px; /* Adjusted size */
+            width: auto;
+        }
+        /* End Header Section */
+
+        /* New container for sidebar and main content */
+        .content-area {
+            display: flex; /* Flexbox for the two-column layout */
+            width: 100%; /* Takes the remaining width below the header */
+        }
+
+
+        .sidebar {
+            width: 220px; /* Fixed width for sidebar */
+            padding-right: 20px; /* Space between sidebar and main content */
+            border-right: 1px solid #eee; /* Separator line */
+            flex-shrink: 0; /* Prevent sidebar from shrinking */
+            box-sizing: border-box;
+        }
+
+        .sidebar h2 {
+            font-size: 1.1em; /* Adjusted size */
+            color: #003366;
+            margin-top: 0;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #007BFF; /* Underline */
+        }
+
+        .sidebar ul {
+            list-style: none; /* Remove default list bullets */
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar li {
+            margin-bottom: 8px; /* Space between list items */
+        }
+
+        .sidebar a {
+            text-decoration: none; /* Remove underline from links */
+            color: #007BFF; /* Link color */
+            display: block; /* Make the whole list item clickable */
+            padding: 3px 0;
+            transition: color 0.2s ease;
+        }
+
+        .sidebar a:hover {
+            color: #0056b3; /* Darker color on hover */
+            text-decoration: underline;
+        }
+
+
+        .main-content {
+            flex-grow: 1; /* Allow main content to take remaining space */
+            padding-left: 20px; /* Add padding to the left of main content */
+        }
+
+        .main-content h1, .main-content h2 {
+             color: #003366;
+        }
+
+        .main-content h1 {
+             margin-top: 0; /* Adjust margin */
+        }
+
+        .highlight {
+            background-color: #e9ecef;
+            padding: 10px 15px;
+            border-left: 4px solid #007BFF;
+            margin: 20px 0;
+        }
+
+         /* Responsive adjustments */
+         @media (max-width: 768px) {
+             .container {
+                 padding: 15px;
+                 margin: 15px auto;
+                 max-width: 95%; /* Allow container to be wider on smaller screens */
+             }
+
+             .header {
+                 flex-direction: column;
+                 align-items: center;
+                 text-align: center;
+                 margin-bottom: 15px;
+                 padding-bottom: 15px;
+             }
+
+             .header-logo {
+                 margin-top: 10px;
+             }
+
+             .content-area {
+                 flex-direction: column; /* Stack sidebar and main content */
+             }
+
+             .sidebar {
+                 width: 100%; /* Sidebar takes full width when stacked */
+                 padding-right: 0;
+                 border-right: none;
+                 border-bottom: 1px solid #eee; /* Add bottom border */
+                 padding-bottom: 15px;
+                 margin-bottom: 15px;
+             }
+
+             .sidebar h2 {
+                 text-align: center;
+             }
+
+             .sidebar ul {
+                 text-align: center; /* Center list items */
+             }
+
+             .sidebar li {
+                 display: inline-block; /* Display list items inline for smaller screens */
+                 margin: 0 10px 8px 10px; /* Adjust margin */
+             }
+
+             .sidebar a {
+                 padding: 3px 5px;
+             }
+
+             .main-content {
+                 padding-left: 0; /* Remove left padding */
+             }
+
+             .main-content h1, .main-content h2 {
+                 text-align: center; /* Center main titles */
+             }
+         }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">
+            <div class="header-title">
+                <h1>Business Plan Version 0.0</h1>
+            </div>
+            <div class="header-logo">
+                <img src="https://kyoconnectai.com/kyoconnectai_logo.jpg" alt="KyoConnectAI Logo">
+            </div>
+        </header>
+
+        <div class="content-area">
+            <nav class="sidebar">
+                <h2>Sections:</h2>
+                <ul>
+                    <li><a href="https://kyokaen.github.io/kyoconnectai-mock-usecase/business-plan/1.problem.html">1. Problem</a></li>
+                    <li><a href="https://kyokaen.github.io/kyoconnectai-mock-usecase/business-plan/2.solution.html">2. Solution</a></li>
+                    <li><a href="https://kyokaen.github.io/kyoconnectai-mock-usecase/business-plan/3.market-competition.html">3. Market & Competition</a></li>
+                    <li><a href="https://kyokaen.github.io/kyoconnectai-mock-usecase/business-plan/4.strategy-analysis.html">4. Strategy Analysis</a></li>
+                    <li><a href="https://kyokaen.github.io/kyoconnectai-mock-usecase/business-plan/5.operation-execution.html">5. Operations & Execution</a></li>
+                    <li><a href="https://kyokaen.github.io/kyoconnectai-mock-usecase/business-plan/6.team.html">6. Team</a></li>
+                    <li><a href="https://kyokaen.github.io/kyoconnectai-mock-usecase/business-plan/7.protection-intellectual-property.html">7. Protection & Intellectual Property</a></li>
+                    <li><a href="https://kyokaen.github.io/kyoconnectai-mock-usecase/business-plan/8.roadmaps.html">8. Roadmaps</a></li>
+                    <li><a href="https://kyokaen.github.io/kyoconnectai-mock-usecase/business-plan/9.funding.html">9. Funding</a></li>
+                    <li><a href="https://kyokaen.github.io/kyoconnectai-mock-usecase/business-plan/10.economic-model.html">10. Economic Model</a></li>
+                    <li><a href="https://kyokaen.github.io/kyoconnectai-mock-usecase/business-plan/11.financial-projection.html">11. Financial Projection</a></li>
+                </ul>
+            </nav>
+
+            <div class="main-content">
+                <h1>Executive Summary</h1>
+                <p>
+                  <strong>KyoConnectAI</strong> is an early-stage AI startup building <strong>customizable AI chatbot agents</strong> for small and medium-sized businesses (SMBs) that lack technical infrastructure and AI expertise. We help SMBs—starting with campsites, leisure parks, and event organizers—automate repetitive customer inquiries (FAQs) and streamline service operations.
+                </p>
+                <p>
+                  Built on advanced AI models such as OpenAI, DeepSeek, Google GenAI and Mistral, our chatbot offers multilingual support, 24/7 availability, and plug-and-play integration via Google Cloud. We’ve already deployed our MVP for a camping site, validated interest from multiple sectors, and are working to convert early demos into paid pilot customers.
+                </p>
+                <p>
+                  Our business model is based on a high-margin subscription SaaS structure, with pricing starting from €100/month. With 8,000+ campsites in France alone, even modest penetration results in strong recurring revenue potential.
+                </p>
+                <p>
+                  KyoConnectAI is now seeking a business-savvy co-founder to lead growth, outreach, and strategic development alongside our technical founder.
+                </p>
+
+                <h2>Conclusion: Why This is a Great Opportunity</h2>
+                <div class="highlight">
+                  <ul>
+                    <li><strong>Validated market need</strong> from real-world customer interviews and MVP deployment</li>
+                    <li><strong>Scalable SaaS model</strong> with high gross margins (85–90%) and low infrastructure costs</li>
+                    <li><strong>Huge underserved market</strong> in France and across Europe (starting with camping, then events & education)</li>
+                    <li><strong>Experienced founder</strong> with 10+ years in AI and IT delivery</li>
+                    <li><strong>Clear roadmap</strong> from demo to paid clients, pilot launches, and eventual expansion</li>
+                  </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
