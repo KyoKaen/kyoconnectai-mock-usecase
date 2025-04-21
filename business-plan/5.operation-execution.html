@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KyoConnectAI - Operations & Execution</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 40px;
+            color: #333;
+            background-color: #f8f9fa; /* Light background for contrast */
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #fff; /* White background for the main content */
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Optional shadow */
+        }
+
+        /* Header Section */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start; /* Align items to the top */
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        .header-title h1 {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 0;
+            color: #000000; /* Black color as requested */
+        }
+
+        .header-logo img {
+            max-height: 60px; /* Adjust size as needed */
+            width: auto;
+        }
+
+        /* Main Content Titles */
+        .main-title {
+            font-size: 1.8em;
+            color: #0d6efd; /* Blue color similar to image */
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .section-title {
+            font-size: 1.4em;
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #0d6efd; /* Blue underline */
+            padding-bottom: 5px;
+            display: inline-block; /* Make underline fit content */
+        }
+
+        /* --- Updated Numbered Sections Styling --- */
+        .numbered-sections {
+            margin-bottom: 40px;
+        }
+
+        .section-item {
+            display: flex; /* Use flexbox to align visual and content */
+            align-items: stretch; /* Stretch items to same height */
+            margin-bottom: 20px; /* Space between items */
+            min-height: 80px; /* Minimum height for items */
+        }
+
+        .section-visual {
+            flex: 0 0 70px; /* Don't grow, don't shrink, base width 70px */
+            background-color: #d0e1f9; /* Light blue background for the shape */
+            clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 50% 100%, 0% 85%); /* Chevron shape */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 25px; /* Space between chevron and text */
+        }
+
+        .section-number {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #333; /* Darker number color */
+        }
+
+        .section-content {
+            flex: 1; /* Allow content to take remaining space */
+            padding-top: 5px; /* Align text slightly better vertically */
+        }
+
+        .section-content h3 {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .section-content ul {
+            list-style: disc;
+            margin-left: 20px;
+            padding-left: 0;
+            margin-top: 0;
+            margin-bottom: 0; /* Remove default bottom margin */
+        }
+        .section-content ul li {
+            margin-bottom: 8px; /* Space between bullet points */
+            line-height: 1.4;
+        }
+        /* --- End of Updated Numbered Sections Styling --- */
+
+
+        /* SWOT Analysis Section */
+        .swot-section {
+            margin-bottom: 40px;
+        }
+
+        .swot-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Two columns */
+            gap: 20px; /* Space between boxes */
+        }
+
+        .swot-box {
+            background-color: #e7f1ff; /* Lighter blue background */
+            padding: 20px;
+            border-radius: 8px; /* Rounded corners */
+            border: 1px solid #cce0ff; /* Light blue border */
+        }
+
+        .swot-box h3 {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-align: center;
+            color: #0b5ed7; /* Darker blue for title */
+        }
+
+        .swot-box ul {
+            list-style: disc;
+            margin-left: 20px;
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+         .swot-box ul li {
+            margin-bottom: 8px; /* Space between bullet points */
+            line-height: 1.4;
+         }
+
+        /* Takeaways Section */
+        .takeaways-section {
+            display: flex;
+            align-items: flex-start; /* Align icon and text top */
+            background-color: #f8f9fa; /* Slightly different background */
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+
+        .takeaways-content h3 {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+         .takeaways-content ul {
+            list-style: disc;
+            margin-left: 20px;
+            padding-left: 0;
+            margin-bottom: 0;
+         }
+         .takeaways-content ul li {
+            margin-bottom: 8px; /* Space between bullet points */
+            line-height: 1.4;
+         }
+
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            body {
+                margin: 20px;
+            }
+            .container {
+                padding: 20px;
+            }
+            .swot-grid {
+                grid-template-columns: 1fr; /* Stack SWOT boxes */
+            }
+             .section-visual {
+                 flex: 0 0 60px; /* Slightly smaller chevron */
+                 margin-right: 15px;
+             }
+             .section-number {
+                 font-size: 1.6em;
+             }
+        }
+         @media (max-width: 480px) {
+             .header {
+                 flex-direction: column; /* Stack logo and title */
+                 align-items: center;
+                 text-align: center;
+             }
+             .header-logo {
+                 margin-top: 10px;
+             }
+             .main-title, .section-title {
+                 font-size: 1.5em;
+             }
+             .section-item {
+                 flex-direction: column; /* Stack chevron above text */
+                 align-items: center; /* Center items when stacked */
+             }
+             .section-visual {
+                 width: 80px; /* Fixed width when stacked */
+                 height: 60px; /* Fixed height */
+                 margin-right: 0; /* Remove right margin */
+                 margin-bottom: 15px; /* Add bottom margin */
+                 flex: none; /* Reset flex properties */
+                 /* Adjust clip-path if needed for aspect ratio */
+                 clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 50% 100%, 0% 80%);
+             }
+             .section-content {
+                 padding-left: 0; /* Remove padding */
+                 text-align: center; /* Center text */
+                 width: 100%; /* Take full width */
+             }
+             .section-content ul {
+                 margin-left: 0;
+                 padding-left: 20px; /* Indent list relative to center */
+                 text-align: left; /* Align list text left */
+             }
+         }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">
+            <div class="header-title">
+                <h1>Business Plan Version 0.0</h1>
+            </div>
+            <div class="header-logo">
+                <img src="https://kyoconnectai.com/kyoconnectai_logo.jpg" alt="KyoConnectAI Logo">
+            </div>
+        </header>
+
+        <h2 class="main-title">KyoConnectAI Startup:</h2>
+        <h3 class="section-title">Section: 5. Operations & Execution</h3>
+
+        <div class="numbered-sections">
+            <div class="section-item">
+                <div class="section-visual">
+                    <div class="section-number">1</div>
+                </div>
+                <div class="section-content">
+                    <h3>What do we already know?</h3>
+                    <ul>
+                        <li>Current Operations: Founder-led development and deployment of MVPs; direct outreach to potential clients. Daily, for acquisition of customers, we identify potential customers, analyze their Business Strategy, IT/digital/AI strategy and draft plan to outreach. For product, we refine the existing chatbot technically and estimate the automation to accelerate the creation and deployment on Clickup and Github.</li>
+                        <li>New operation at the end of 2025: We aim to find a co-founder and our daily operation will be primarily shared on Github integrated with internal AI agent for marketing, strategy, and routine process. We will have our own AI agent for processing and managing our marketing activities. We will apply Kanban/Scrum to track daily operation and iteration.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section-item">
+                <div class="section-visual">
+                    <div class="section-number">2</div>
+                </div>
+                <div class="section-content">
+                    <h3>What do we want to know?</h3>
+                    <ul>
+                        <li>Optimal processes for onboarding new clients including demo efficiently and technically by UI/UX. Can we implement by ourselves or do we need other web design team(probably not). Automate process for creation and deployment of Demo.</li>
+                        <li>Requirements for scaling operations, including potential hires and infrastructure needs.</li>
+                        <li>Hiring engineer: if possible, we will not hire engineer but maximize AI agent. If we can acquire subscribed customer (ideally 3-5), we may consider hiring a dedicated engineer to maintain technical tasks. In that case,2 founders will be focusing on business development.</li>
+                        <li>Our own AI Agent: Possibility of our own AI agent for Marketing, Strategy, Finance before the end of 2025 to compensate our shortage of team members. How long can we sustain without hiring other than co-founder.</li>
+                        <li>Operation platform: short-term before the end of 2026</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section-item">
+                <div class="section-visual">
+                    <div class="section-number">3</div>
+                </div>
+                <div class="section-content">
+                    <h3>What don’t we know?</h3>
+                    <ul>
+                        <li>Time and resources required for customizing solutions for different clients.</li>
+                        <li>Potential challenges in maintaining service quality as the client base grows.</li>
+                        <li>When to scale</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="swot-section">
+            <div class="swot-grid">
+                <div class="swot-box">
+                    <h3>- S -</h3>
+                    <ul>
+                        <li>Lean operations; flexibility in adapting to customer needs. Tailor MVP for demo.</li>
+                    </ul>
+                </div>
+                <div class="swot-box">
+                    <h3>- W -</h3>
+                    <ul>
+                        <li>Limited manpower; potential bottlenecks in scaling. Low speed in outreach.</li>
+                    </ul>
+                </div>
+                <div class="swot-box">
+                    <h3>- O -</h3>
+                    <ul>
+                        <li>Streamlining processes for rapid deployment; leveraging automation tools.</li>
+                    </ul>
+                </div>
+                <div class="swot-box">
+                    <h3>- T -</h3>
+                    <ul>
+                        <li>Operational strain with increasing client demands; reliance on cloud service providers. Potential financial concern on Google cloud.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="takeaways-section">
+            <div class="takeaways-content">
+                <h3>Takeaway:</h3>
+                <ul>
+                    <li>Develop standardized UI for create chatbot with one click and deployment procedures.</li>
+                    <li>Github for future operation visualization and management</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
