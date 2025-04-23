@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Agent - KyoConnectAI</title>
+<!--     <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="/dashboard-creation/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="app-header">
+        <div class="logo">
+            <img src="https://kyoconnectai.com/kyoconnectai_logo.jpg" alt="KyoConnectAI Logo" class="logo-image">
+            KyoConnectAI
+        </div>
+        </header>
+
+    <main class="main-container">
+        <h1 class="page-title">Create new agent</h1>
+
+        <div class="dashboard-layout">
+            <nav class="sidebar-left">
+                <ul>
+                    <li class="active"><a href="#" data-tab="files">Files</a></li>
+                    <li><a href="#" data-tab="text">Text</a></li>
+                    <li><a href="#" data-tab="website">Website</a></li>
+                    <li><a href="#" data-tab="qna">Q&A</a></li>
+                    <li><a href="#" data-tab="notion">Notion</a></li>
+                </ul>
+            </nav>
+
+            <section class="content-panel">
+                <div id="tab-content-container">
+
+                    <div id="files-content" class="tab-pane active">
+                        <h2 class="panel-title">Files</h2>
+                        <div class="file-dropzone" id="fileDropzoneTarget">
+                            <div class="dropzone-content">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="upload-icon">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="17 8 12 3 7 8"></polyline>
+                                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                                </svg>
+                                <p class="dropzone-text">Drag & drop files here, or <span class="click-select">click to select files</span></p>
+                                <p class="supported-types">Supported File Types: .pdf, .doc, .docx, .txt</p>
+                            </div>
+                            <input type="file" id="fileInput" multiple hidden>
+                        </div>
+                        <p class="info-text">If you are uploading a PDF, make sure you can select/highlight the text.</p>
+                    </div>
+
+                    <div id="text-content" class="tab-pane hidden">
+                        <h2 class="panel-title">Text</h2>
+                        <p>Enter text content here...</p>
+                        <textarea class="text-input-area" placeholder="Paste your text here..."></textarea>
+                    </div>
+
+                    <div id="website-content" class="tab-pane hidden">
+                        <h2 class="panel-title">Website</h2>
+
+                        <div class="website-section">
+                            <label for="crawl-url" class="section-label">Crawl</label> <div class="input-button-group">
+                                <input type="url" id="crawl-url" name="crawl-url" placeholder="https://www.example.com">
+                                <button id="fetchLinksBtn" class="inline-button">Fetch links</button>
+                            </div>
+                            <div id="crawl-url-error" class="error-message hidden">Invalid URL</div>
+                            <p class="section-description">This will crawl all the links starting with the URL (not including files on the website).</p>
+                        </div>
+
+                        <div class="separator">OR</div>
+
+                        <div class="website-section">
+                             <label for="sitemap-url" class="section-label">Submit Sitemap</label>
+                             <div class="input-button-group">
+                                 <input type="url" id="sitemap-url" name="sitemap-url" placeholder="https://www.example.com/sitemap.xml">
+                                 <button id="loadSitemapBtn" class="inline-button">Load sitemap</button>
+                             </div>
+                            <div id="sitemap-url-error" class="error-message hidden">Invalid URL</div>
+                        </div>
+
+                         <div class="included-links-section">
+                            <h3 class="included-links-title">Included Links</h3>
+                            <div id="includedLinksContainer">
+                                <p class="no-links-text">No links added yet.</p>
+                            </div>
+                            <button class="add-link-button" aria-label="Add Link">+</button>
+                         </div>
+                    </div>
+
+                    <div id="qna-content" class="tab-pane hidden">
+                        <h2 class="panel-title">Q&A</h2>
+                        <p>Enter questions and answers here...</p>
+                         </div>
+
+                    <div id="notion-content" class="tab-pane hidden">
+                        <h2 class="panel-title">Notion</h2>
+                        <p>Connect to Notion here...</p>
+                         </div>
+
+                </div>
+            </section>
+
+            <aside class="sidebar-right">
+                <h3 class="sources-title">SOURCES</h3>
+                 <div class="sources-list">
+                    <p style="text-align: center; color: #6c757d; font-size: 0.9em;">No sources added yet.</p>
+                 </div>
+                <div class="size-info">
+                    <span>Total size:</span>
+                    <span class="size-value"><strong>0 B</strong> / 400 KB</span>
+                </div>
+                <button class="create-button">Create agent</button>
+            </aside>
+        </div>
+    </main>
+
+  <script src="/dashboard-creation/js/script.js"></script>
+
+</body>
+</html>
