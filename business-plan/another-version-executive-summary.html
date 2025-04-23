@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KyoConnectAI - Executive Summary</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 40px;
+            color: #333;
+            background-color: #f8f9fa; /* Light background for contrast */
+            line-height: 1.6; /* Improve readability */
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #fff; /* White background for the main content */
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Optional shadow */
+        }
+
+        /* Header Section (Same as before) */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        .header-title h1 {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 0;
+            color: #000000; /* Black color */
+        }
+
+        .header-logo img {
+            max-height: 60px;
+            width: auto;
+        }
+
+        /* Main Title and Subtitle */
+        .main-title {
+            font-size: 1.8em;
+            color: #0d6efd; /* Blue color */
+            margin-bottom: 5px; /* Reduced margin */
+            font-weight: bold;
+            text-align: center; /* Center title */
+        }
+
+        .subtitle {
+            font-size: 1.1em;
+            color: #555;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 30px;
+            font-weight: normal;
+        }
+
+        /* Executive Summary Sections Styling */
+        .summary-section {
+            background-color: #f0f6ff; /* Slightly different light blue */
+            padding: 20px 25px; /* More padding */
+            margin-bottom: 25px; /* Space between sections */
+            border-radius: 8px; /* Rounded corners */
+            border: 1px solid #d9e8ff; /* Lighter blue border */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Subtle shadow for depth */
+        }
+
+        .summary-section h3 {
+            font-size: 1.3em; /* Slightly larger section titles */
+            font-weight: bold;
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #0b5ed7; /* Darker blue for title */
+            border-bottom: 1px solid #cce0ff; /* Underline */
+            padding-bottom: 8px;
+        }
+
+        .summary-section p {
+            margin-top: 0;
+            margin-bottom: 1em; /* Standard paragraph spacing */
+        }
+        .summary-section p:last-child {
+             margin-bottom: 0; /* Remove margin for last paragraph in section */
+        }
+
+        .summary-section ul {
+            list-style: disc;
+            margin-left: 20px;
+            padding-left: 0;
+            margin-top: 0;
+            margin-bottom: 1em; /* Space after lists */
+        }
+         .summary-section ul li {
+             margin-bottom: 8px; /* Space between bullet points */
+         }
+          .summary-section ul li ul { /* Nested list styling */
+               margin-top: 8px;
+               margin-bottom: 8px;
+               list-style: circle; /* Different bullet for sub-items */
+          }
+         .summary-section ul li ul li {
+             margin-bottom: 5px;
+         }
+
+
+        .summary-section strong, .summary-section b {
+            font-weight: 600; /* Make bold text stand out slightly more */
+            color: #0a4cb0; /* Slightly darker blue for highlighted text */
+        }
+
+        /* Specific styling for phases in Solution */
+        .phase-title {
+            font-weight: bold;
+            color: #333;
+        }
+
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            body {
+                margin: 20px;
+            }
+            .container {
+                padding: 20px;
+            }
+             .main-title {
+                 font-size: 1.6em;
+             }
+             .subtitle {
+                 font-size: 1.0em;
+             }
+             .summary-section {
+                 padding: 15px 20px;
+             }
+             .summary-section h3 {
+                 font-size: 1.2em;
+             }
+        }
+         @media (max-width: 480px) {
+             .header {
+                 flex-direction: column;
+                 align-items: center;
+                 text-align: center;
+             }
+             .header-logo {
+                 margin-top: 10px;
+             }
+             .main-title {
+                 font-size: 1.4em;
+             }
+              .subtitle {
+                 font-size: 0.9em;
+             }
+         }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">
+            <div class="header-title">
+                <h1>Business Plan Version 0.0</h1>
+            </div>
+            <div class="header-logo">
+                <img src="https://kyoconnectai.com/kyoconnectai_logo.jpg" alt="KyoConnectAI Logo">
+            </div>
+        </header>
+
+        <h2 class="main-title">KyoConnectAI – Executive Summary</h2>
+        <p class="subtitle">AI Agent Platform for Repetitive Tasks, Starting with Customer Service Automation</p>
+
+        <div class="summary-section">
+            <h3>Problem</h3>
+            <p>
+                SMBs across industries waste <strong>thousands of euros monthly</strong> on repetitive tasks like FAQs (e.g., campsite bookings, rental inquiries, product questions). Manual responses are slow, costly, and scale poorly during peak demand (validated via interviews with 2 campsites and [X] other SMBs).
+            </p>
+        </div>
+
+        <div class="summary-section">
+            <h3>Our Solution</h3>
+            <p>
+                A customizable <strong>AI agent platform</strong> that evolves with client needs:
+            </p>
+            <ul>
+                <li><span class="phase-title">Phase 1 (Now):</span> 24/7 multilingual FAQ chatbot (90% accuracy in production at [Camping Site A]).</li>
+                <li><span class="phase-title">Phase 2 (2025):</span> Task automation (e.g., bookings, rental applications).</li>
+                <li><span class="phase-title">Phase 3 (2026+):</span> Full-service agent (payments, CRM sync, dynamic responses).</li>
+            </ul>
+        </div>
+
+        <div class="summary-section">
+            <h3>Why Now?</h3>
+             <ul>
+                <li><strong>Cross-industry demand:</strong> Campsites, rentals (Garantme), e-commerce (Bougies de Charroux) all face identical pain points.</li>
+                <li><strong>No-code AI adoption:</strong> SMBs now embrace tools like ours—no IT skills needed.</li>
+                <li><strong>Architectural edge:</strong> We design for horizontal scalability (one platform, multiple industries).</li>
+            </ul>
+        </div>
+
+        <div class="summary-section">
+             <h3>Traction</h3>
+             <ul>
+                <li><strong>Live MVP:</strong> Deployed at [Camping Site A] with 90% query resolution accuracy.</li>
+                <li><strong>Pipeline:</strong> In discussions with 3 campsites, [Bougies de Charroux], and [Garantme].</li>
+            </ul>
+        </div>
+
+         <div class="summary-section">
+             <h3>Business Model</h3>
+             <ul>
+                <li><strong>Subscription SaaS:</strong> €100–€300/month (tiered by features).</li>
+                <li><strong>High margins:</strong> 85%+ gross margin (cloud costs <€15/user at scale).</li>
+                <li><strong>Horizontal scaling:</strong> Same core tech serves rentals, e-commerce, hospitality.</li>
+            </ul>
+        </div>
+
+         <div class="summary-section">
+             <h3>Team</h3>
+             <ul>
+                <li><strong>Technical Founder (You):</strong> 8+ years in AI/IT, architect of current MVP.</li>
+                <li><strong>Co-Founder:</strong> Ex-[Company], 8+ years in GTM strategy for SMB SaaS.</li>
+                 <li><strong>Hiring Plan:</strong> First engineer at 5 paying clients (target mid-2025).</li>
+            </ul>
+        </div>
+
+         <div class="summary-section">
+            <h3>Vision</h3>
+             <p>
+                To automate repetitive tasks for any SMB—starting with conversations, expanding to end-to-end operations.
+            </p>
+        </div>
+
+    </div> </body>
+</html>
