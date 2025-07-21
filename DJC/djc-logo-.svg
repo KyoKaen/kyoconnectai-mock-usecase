@@ -1,0 +1,14 @@
+<svg width="200" height="120" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path fill="currentColor" d="M100 0L0 100H200L100 0ZM100 20.3L181.8 90H18.2L100 20.3Z"/>
+  <path fill="currentColor" d="M30 100H0V70H30V100Z"/>
+  <path fill="currentColor" d="M30 60H0V30H30V60Z"/>
+  <path fill="currentColor" d="M40 100H70V70H40V100Z"/>
+  <path fill="currentColor" d="M40 60H70V30H40V60Z"/>
+  <path fill="currentColor" d="M170 100H200V70H170V100Z"/>
+  <path fill="currentColor" d="M170 60H200V30H170V60Z"/>
+  <path fill="currentColor" d="M160 100H130V70H160V100Z"/>
+  <path fill="currentColor" d="M160 60H130V30H160V60Z"/>
+  <path fill="currentColor" d="M85 100H115V80H85V100Z"/>
+  <path fill="currentColor" d="M85 70H115V50H85V70Z"/>
+  <path fill="currentColor" d="M85 40H115V20H85V40Z"/>
+</svg>
