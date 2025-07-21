@@ -1,0 +1,280 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://kyokaen.github.io/kyoconnectai-mock-usecase/DJC/djc-logo.jpg" type="image/svg+xml">
+  <title>株式会社DJC | 品質最優先のものづくり</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    body { font-family: 'Yu Gothic', 'Meiryo', sans-serif; background: #f6f9fb; color: #1a202c; margin: 0; }
+    header { background: #1976d2; color: #fff; padding: 2.3rem 0 1.3rem 0; text-align: center; }
+    .hero-image { width: 100%; max-width: 900px; height: 320px; object-fit: cover; border-radius: 14px; margin: 0 auto 1.7rem auto; display: block; box-shadow: 0 2px 16px rgba(30,40,60,0.11); }
+    .lead { font-size: 1.23em; font-weight: 500; margin: 0 0 1.7rem 0; color: #2b4168; }
+    nav { background: #1652a4; padding: 0.5rem 0; text-align: center; }
+    nav a { color: #fff; margin: 0 1.2rem; text-decoration: none; font-weight: 500; }
+    main { max-width: 950px; margin: 2rem auto; padding: 2.1rem; background: #fff; border-radius: 16px; box-shadow: 0 2px 12px rgba(30,30,50,0.09); }
+    h2 { border-left: 4px solid #1976d2; padding-left: 1rem; margin-top: 2.5rem; }
+    section { margin-bottom: 2.6rem; }
+    .photo-grid { display: flex; flex-wrap: wrap; gap: 1.2rem; margin-bottom: 0.7rem; }
+    .photo-box { flex: 1 1 280px; background: #f5f7fa; border-radius: 10px; overflow: hidden; box-shadow: 0 1px 7px rgba(30,30,50,0.07); text-align: center; }
+    .photo-box img { width: 100%; height: 180px; object-fit: cover; }
+    .photo-caption { font-size: 0.98em; color: #455; padding: 0.5rem 0.7rem 0.9rem 0.7rem; }
+    ul { margin-top: 0.7rem; margin-bottom: 0.7rem; }
+    table { width: 100%; border-collapse: collapse; margin-top: 1rem; background: #f9fbfd; }
+    th, td { border: 1px solid #c1c7cd; padding: 0.6rem 0.8rem; text-align: left; }
+    th { background: #e3ecfa; }
+    .flow-step { display: flex; align-items: center; margin-bottom: 0.8rem; }
+    .flow-step span { font-weight: bold; color: #1976d2; margin-right: 0.7rem; }
+    .contact { background: #e3ecfa; padding: 1.5rem; border-radius: 12px; }
+    footer { text-align: center; color: #666; padding: 1.1rem 0; margin-top: 3rem; font-size: 0.96em; background: #f2f5fa; }
+    @media (max-width: 650px) {
+      main { padding: 0.7rem; }
+      .photo-grid { flex-direction: column; gap: 0.7rem; }
+      .photo-box img { height: 160px; }
+    }
+
+    /* FAQ用追加スタイル */
+    #faq dl {
+      margin-top: 1.5rem;
+    }
+
+    #faq dt {
+      background-color: #f0f7ff; /* 質問の背景色 */
+      border: 1px solid #d4e8ff; /* 質問のボーダー */
+      padding: 15px 20px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-bottom: 5px;
+      display: flex; /* アイコン配置のためにflexboxを使用 */
+      justify-content: space-between; /* 質問とアイコンを左右に配置 */
+      align-items: center;
+      transition: background-color 0.3s ease; /* ホバー効果 */
+      border-radius: 8px; /* 角を丸くする */
+    }
+
+    #faq dt:hover {
+      background-color: #e0f0ff; /* ホバー時の背景色 */
+    }
+
+    #faq dt i {
+      transition: transform 0.3s ease; /* アイコンの回転アニメーション */
+      color: #1976d2; /* アイコンの色 */
+    }
+
+    #faq dt.active i {
+      transform: rotate(90deg); /* アクティブ時のアイコン回転 */
+    }
+
+    #faq dd {
+      background-color: #ffffff; /* 回答の背景色 */
+      border: 1px solid #e0e0e0; /* 回答のボーダー */
+      border-top: none; /* 上部のボーダーをなくす */
+      padding: 15px 20px;
+      margin-left: 0; /* dtとの左揃えのため */
+      margin-bottom: 10px; /* 各FAQ項目の間隔 */
+      overflow: hidden; /* 高さをアニメーションさせるため */
+      transition: max-height 0.4s ease-out, padding 0.4s ease-out; /* 高さとパディングのアニメーション */
+      max-height: 0; /* デフォルトで非表示 */
+      padding-top: 0;
+      padding-bottom: 0;
+      opacity: 0; /* アニメーションのために透明度も */
+      visibility: hidden; /* アニメーションのためにvisibilityも */
+      border-radius: 0 0 8px 8px; /* 下側の角を丸くする */
+    }
+
+    #faq dd.active {
+      max-height: 200px; /* 開いた時の最大高さ (コンテンツに合わせて調整) */
+      padding-top: 15px;
+      padding-bottom: 15px;
+      opacity: 1;
+      visibility: visible;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>株式会社DJC</h1>
+    <p class="lead">全てにおいて「品質」を最優先事項とし、自信を持って次工程の人に繋げられるものづくり</p>
+    <img src="梱包時.jpg" alt="梱包作業の様子" class="hero-image">
+  </header>
+  <nav>
+    <a href="#about">会社概要</a>
+    <a href="#philosophy">経営理念</a>
+    <a href="#business">事業内容</a>
+    <a href="#products">製品・実績</a>
+    <a href="#factory">工場・設備</a>
+    <a href="#partners">協力工場</a>
+    <a href="#flow">手配フロー</a>
+    <a href="#contact">お問い合わせ</a>
+  </nav>
+  <main>
+    <section id="about">
+      <h2>会社概要</h2>
+      <table>
+        <tr><th>会社名</th><td>株式会社DJC</td></tr>
+        <tr><th>設立年月日</th><td>2025年6月25日</td></tr>
+        <tr><th>本社住所</th><td>東京都立川市砂川町5丁目42-5-A105</td></tr>
+        <tr><th>代表取締役</th><td>山本康弘</td></tr>
+      </table>
+    </section>
+
+    <section id="philosophy">
+      <h2>経営理念</h2>
+      <p>全てにおいて「品質」を最優先事項とし、自信を持って次工程の人に繋げられる製品を提供します。</p>
+    </section>
+
+    <section id="business">
+      <h2>事業内容</h2>
+      <ul>
+        <li>コンクリート製品用型枠の設計・製造・輸出入・販売および保守管理</li>
+        <li>レーザー加工品の製造・輸出入および販売</li>
+        <li>治工具の製造・輸出入および販売</li>
+        <li>上記に付帯する一切の業務</li>
+      </ul>
+    </section>
+
+    <section id="products">
+      <h2>製品・実績ギャラリー</h2>
+      <div class="photo-grid">
+        <div class="photo-box">
+          <img src="外周梁製品.jpg" alt="外周梁製品">
+          <div class="photo-caption">外周梁製品</div>
+        </div>
+        <div class="photo-box">
+          <img src="レンコン梁型枠.jpg" alt="レンコン梁型枠">
+          <div class="photo-caption">レンコン梁型枠</div>
+        </div>
+        <div class="photo-box">
+          <img src="レンコン梁製品.jpg" alt="レンコン梁製品">
+          <div class="photo-caption">レンコン梁製品</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="factory">
+      <h2>工場・現場の様子</h2>
+      <div class="photo-grid">
+        <div class="photo-box">
+          <img src="梱包時.jpg" alt="梱包時">
+          <div class="photo-caption">梱包時</div>
+        </div>
+        <div class="photo-box">
+          <img src="出荷時1.jpg" alt="出荷時1">
+          <div class="photo-caption">出荷時1</div>
+        </div>
+        <div class="photo-box">
+          <img src="出荷時2.jpg" alt="出荷時2">
+          <div class="photo-caption">出荷時2</div>
+        </div>
+      </div>
+      <table>
+        <tr><th>設計人員</th><td>5名</td></tr>
+        <tr><th>製造人員</th><td>30名</td></tr>
+        <tr><th>検査員</th><td>2名</td></tr>
+        <tr><th>主な設備</th><td>
+          レーザー加工機（6000mm×2000mm、1～20mm厚）×2台<br>
+          ベンダー（3000mm/8mm）×1台<br>
+          フライス加工機（6000mm）×1台<br>
+          クレーン（10t）×4基<br>
+          バンドソー×2台
+        </td></tr>
+      </table>
+    </section>
+
+  <!-- 協力工場紹介 -->
+  <section id="partners">
+    <h2>協力工場</h2>
+    <table>
+      <tr><th>名称</th><th>所在地</th></tr>
+      <tr><td>上海提携工場(SJC)</td><td>上海市嘉定区</td></tr>
+      <tr><td>広東提携工場(GJC)</td><td>広東省中山市</td></tr>
+    </table>
+    <p>現地の優れた技術力と強固な協力体制で、品質・納期を徹底しています。</p>
+  </section>
+
+    <section id="flow">
+      <h2>手配フロー</h2>
+      <div class="flow-step"><span>①</span>受注（DJC）</div>
+      <div class="flow-step"><span>②</span>作図・手配（DJC・SJ）</div>
+      <div class="flow-step"><span>③</span>製造（SJ）</div>
+      <div class="flow-step"><span>④</span>検査・梱包（DJC・SJ）</div>
+      <div class="flow-step"><span>⑤</span>出荷・輸送（DJC）</div>
+      <div class="flow-step"><span>⑥</span>納品</div>
+    </section>
+
+    <section id="faq">
+      <h2>FAQ（よくあるご質問）</h2>
+      <dl>
+        <dt>Q: 株式会社DJCはどんな会社ですか？ <i class="fas fa-chevron-right"></i></dt>
+        <dd>A: 株式会社DJCは、東京都立川市に本社を構える、コンクリート製品用型枠の設計・製造・販売を中心とした会社です。レーザー加工品や治工具の製造・販売、保守管理にも対応しています。</dd>
+
+        <dt>Q: どこに工場がありますか？ <i class="fas fa-chevron-right"></i></dt>
+        <dd>A: 上海市嘉定区と広東省中山市にある提携工場にて高品質な製品の提供を心掛けて製造しています。</dd>
+
+        <dt>Q: どんな製品を作っていますか？ <i class="fas fa-chevron-right"></i></dt>
+        <dd>A: コンクリート成形用鋼製型枠型枠、レーザー加工品、治工具など、主に建設・インフラ関連の部品や製品を設計・製造しています。</dd>
+
+        <dt>Q: 主な設備について教えてください <i class="fas fa-chevron-right"></i></dt>
+        <dd>A: 上海の提携工場には、6000mm×2000mmまで対応可能なレーザー加工機2台、ベンダー、フライス加工機、クレーン、バンドソーなどを備えています。</dd>
+
+        <dt>Q: 少量生産・特注対応は可能ですか？ <i class="fas fa-chevron-right"></i></dt>
+        <dd>A: はい、少量生産や特注品にも柔軟に対応しています。ご要望に応じて設計から製造、納品まで一貫対応いたします。</dd>
+
+        <dt>Q: 海外への輸出入にも対応していますか？ <i class="fas fa-chevron-right"></i></dt>
+        <dd>A: はい、日本国内外の企業様向けに輸出入も積極的に行っています。</dd>
+
+        <dt>Q: 品質への取り組みは？ <i class="fas fa-chevron-right"></i></dt>
+        <dd>A: 全ての工程で「品質最優先」を徹底し、検査員による厳格な品質管理体制を敷いています。</dd>
+
+        <dt>Q: 見積り依頼や問い合わせはどこからできますか？ <i class="fas fa-chevron-right"></i></dt>
+        <dd>A: 公式ウェブサイトのお問い合わせフォーム、またはお電話・メールでお気軽にご連絡ください。</dd>
+
+        <dt>Q: 取引実績や納期について教えてください <i class="fas fa-chevron-right"></i></dt>
+        <dd>A:多数の国内外建設会社や同業会社との取引・製造実績があり、ご希望納期に合わせて柔軟に調整可能です。</dd>
+      </dl>
+    </section>
+
+    <section id="contact">
+      <h2>お問い合わせ</h2>
+      <div class="contact">
+        <p>ご相談・ご依頼は、下記メールまでお気軽にご連絡ください。</p>
+        <p><b>メール：</b>info@djc.co.jp（仮）</p>
+        <p>※正式なメールアドレスやフォーム等は今後ご指定いただけます。</p>
+      </div>
+    </section>
+  </main>
+  <footer>
+    &copy; 2025 株式会社DJC. All rights reserved.
+  </footer>
+
+  <script src="https://kyokaen.github.io/kyoconnectai-chatbot-js/djc/djc-remark-chatbot.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const faqQuestions = document.querySelectorAll('#faq dt');
+
+      faqQuestions.forEach(question => {
+        question.addEventListener('click', function() {
+          const answer = this.nextElementSibling; // dtの次の要素はdd
+          const icon = this.querySelector('i');
+
+          // 現在開いている他のFAQを閉じる (オプション: 不要なら削除)
+          faqQuestions.forEach(otherQuestion => {
+            if (otherQuestion !== this && otherQuestion.classList.contains('active')) {
+              otherQuestion.classList.remove('active');
+              otherQuestion.nextElementSibling.classList.remove('active');
+              otherQuestion.querySelector('i').classList.remove('active');
+            }
+          });
+
+          // クリックされたFAQの開閉を切り替える
+          this.classList.toggle('active');
+          answer.classList.toggle('active');
+          icon.classList.toggle('active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
